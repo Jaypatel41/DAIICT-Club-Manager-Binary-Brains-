@@ -1,6 +1,7 @@
 #include <iostream>
 #include "node.cpp"
-using namespace std;
+
+
 void deletion(node **club[], int id, int num)
 {
     node **p;
