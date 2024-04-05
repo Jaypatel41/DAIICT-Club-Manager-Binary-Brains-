@@ -1,7 +1,8 @@
 #include <iostream>
+#include<vector>
 #include "node.cpp"
 
-void insertmember(node**club[],string N,int id,int num)
+void insertmember(vector<node**>club,string N,int id,int num)
 {
 node*ptr=new node;
      ptr->name=N;
