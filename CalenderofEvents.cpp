@@ -29,3 +29,16 @@ void addEvent(vector<Event>& calendar) {
     calendar.push_back(newEvent);
     cout << "Event added successfully!" << endl;
 }
+
+void deleteEvent(vector<Event>& calendar) {
+    int index;
+    cout << "Enter the index of the event you want to delete: ";
+    cin >> index;
+    if (index >= 0 && index < calendar.size()) {
+        calendar.erase(calendar.begin() + index);
+        cout << "Event deleted successfully!" << endl;
+    } else {
+        cout << "Invalid index!" << endl;
+    }
+}
+
