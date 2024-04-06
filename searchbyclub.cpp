@@ -49,3 +49,26 @@ void searchbyclub(node **club[], int num)
         }
     }
 }
+
+void searchbyclubcategory(node **club[], int num)
+{
+    switch (num)
+    {
+    case 1:
+        searchbyclub(club, 0);
+        searchbyclub(club, 1);
+        searchbyclub(club, 2);
+        break;
+    case 2:
+        searchbyclub(club, 3);
+        searchbyclub(club, 4);
+        searchbyclub(club, 5);
+        searchbyclub(club, 6);
+        break;
+    case 3:
+        searchbyclub(club, 7);
+        searchbyclub(club, 8);
+    case 4:
+        searchbyclub(club, 9);
+    }
+}
