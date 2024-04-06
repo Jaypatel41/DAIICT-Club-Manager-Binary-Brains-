@@ -17,3 +17,15 @@ void displayCalendar(const vector<Event>& calendar) {
     }
 }
 
+
+void addEvent(vector<Event>& calendar) {
+    Event newEvent;
+    cout << "Enter event title: ";
+    getline(cin >> ws, newEvent.title); 
+    cout << "Enter event date (YYYY-MM-DD): ";
+    cin >> newEvent.date;
+    cout << "Enter event time (HH:MM): ";
+    cin >> newEvent.time;
+    calendar.push_back(newEvent);
+    cout << "Event added successfully!" << endl;
+}
