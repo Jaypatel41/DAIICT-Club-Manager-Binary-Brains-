@@ -72,3 +72,73 @@ void searchbyclubcategory(node **club[], int num)
         searchbyclub(club, 9);
     }
 }
+
+void searchbyid(node **club[], int id)
+{
+    short int c = 0;
+    node **p;
+    for (int i = 0; i < 10; i++)
+    {
+        p = club[i];
+        node *q;
+        q = p[id % 10];
+        short int d = 0;
+        while (q->next != NULL)
+        {
+            if (q->stdid == id)
+            {
+                if (c == 0)
+                {
+                    c = 1;
+                    d = 1;
+                    cout << "Id - " << q->stdid << endl;
+                    cout << "Name - " << q->name << endl;
+
+                    break;
+                }
+                else
+                    d = 1;
+            }
+            else
+                q = q->next;
+        }
+        if (d == 1)
+        {
+            switch (i)
+            {
+            case 0:
+                cout << "Press Club" << endl;
+                break;
+            case 1:
+                cout << "Debate Club" << endl;
+                break;
+            case 2:
+                cout << "Film Club" << endl;
+                break;
+            case 3:
+                cout << "Dance Club" << endl;
+                break;
+            case 4:
+                cout << "Music Club" << endl;
+                break;
+            case 5:
+                cout << "Garba Club" << endl;
+                break;
+            case 6:
+                cout << "Drama Club" << endl;
+                break;
+            case 7:
+                cout << "Research Club" << endl;
+                break;
+            case 8:
+                cout << "Programming Club" << endl;
+                break;
+            case 9:
+                cout << "Chess Club" << endl;
+                break;
+            }
+        }
+    }
+    if (c == 0)
+        cout << "Member of this ID is currently not present in any of the club of DAIICT" << endl;
+}
