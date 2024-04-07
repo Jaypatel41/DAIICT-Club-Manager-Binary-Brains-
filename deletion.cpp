@@ -2,49 +2,42 @@
 #include "node.cpp"
 
 
-void deletion(node **club[], int id, int num)
+void deletion(const vector<vector<node *>> &Club, list<pair<int, string>> &ls)
 {
-    node **p;
-    if (num <= 10 && num > 0)
+    int id;
+    int n;
+    node *q;
+    cout << "Enter the id of student you want to delete" << endl;
+    cin >> id;
+    string s;
+    cout << "Enter the name of the club from which you want to delete a member" getline(cin, s);
+    n = ClubIndex(ls, s)
+    q = Club[n][id % 10];
+    while (q != NULL)
     {
-        p = club[num - 1];
-        node *q;
-        q = p[id % 10];
-        if (q == NULL)
-            cout << "Empty array" << endl;
+        if (q->id == id)
+        {
+            node *p= q;
+            q=q->next;
+            p->next->previous=NULL;
+            p->next=NULL;
+            delete p;
+        }
         else
         {
-            if (q->stdid == id)
+            q = q->next;
+            if (q->id == id)
             {
-                p[id % 10] = q->next;
-                q->next = NULL;
-                // delete node
+                node *a;
+                node *b;
+                a = q->next;
+                b = q->previous;
+                b->next = a;
+                a->previous = b;
+                delete q;
             }
             else
-            {
-                int c = 0;
-                while (q->next != NULL)
-                {
-                    if (q->stdid == id)
-                    {
-                        c = 1;
-                        node *a;
-                        node *b;
-                        a = q->previous;
-                        b = q->next;
-                        b->previous = a;
-                        a->next = b;
-                        // doubly linked list deletion
-                        break;
-                    }
-                    else
-                        q = q->next;
-                }
-                if (c)
-                    cout << "Wrong id entered" << endl;
-            }
+                q = q->next;
         }
     }
-    else
-        cout << "Wrong club number entered" << endl;
 }
