@@ -222,3 +222,38 @@ void searchbyname(vector<vector<node *>> Club, list<pair<int, string>> ls)
         cout << "No member found in Any CLUBS\n";
     }
 }
+
+void printAllMembers(const vector<vector<node *>> &Club, list<pair<int, string>> &ls)
+{
+    bool anyMembers = false;
+    for (int i = 0; i < Club.size(); ++i)
+    {
+        bool clubHasMembers = false;
+        string clubname = ClubName(ls, i);
+
+        if(clubname!=" ")
+        {
+        cout << i + 1 << ") " << clubname << "_Club"
+             << " Members:" << endl;
+        for (int j = 0; j < Club[i].size(); ++j)
+        {
+            node *p = Club[i][j];
+            while (p != nullptr)
+            {
+                cout << "Name: " << p->name << ", ID: " << p->stdid << endl;
+                p = p->next;
+                clubHasMembers = true;
+                anyMembers = true;
+            }
+        }}
+        if (!clubHasMembers)
+        {
+            cout << "No members in this club." << endl;
+        }
+        cout << endl;
+    }
+    if (!anyMembers)
+    {
+        cout << "No members in any club." << endl;
+    }
+}
