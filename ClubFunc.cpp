@@ -30,3 +30,41 @@ void clubAddition(vector<vector<node *>> Club,list<pair<int,string>>& ls,vector<
     Convenori.push_back(p->stdid);
     
 }
+
+void clubDeletion(vector<vector<node *>> &Club, list<pair<int, string>> &ls, vector<vector<string>> &Convenor, vector<int> &Convenori)
+{
+    string clubname;
+    cin >> clubname;
+    editString(clubname);
+    int num = ClubIndex(ls, clubname);
+    if (num == 100)
+       { cout << "There is NO such Club as " << clubname << "_Club.";
+        return;}
+    for (int i = 0; i < 10; i++)
+    {
+        Club[num][i] = NULL;
+    }
+    
+    // Deleting Convenor also from Convenor list
+    int index;
+    for(int i=0;i<Convenor.size();i++)
+    {
+        if(Club[i][0]==clubname)
+        {
+            index=i;
+        }
+    }
+    Convenor.erase(Convenor.begin()+index);
+    Convenori.erase(Convenori.begin()+index);
+    
+    //Changing List of Clubs also
+    for (const auto &pair : ls)
+    {
+        if(pair.second==clubname)
+        {
+            pair.second=" ";
+        }
+    }
+
+    cout << clubname << "_Club has been disbanded.\n\n";
+}
