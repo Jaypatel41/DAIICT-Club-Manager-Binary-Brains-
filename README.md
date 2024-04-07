@@ -41,11 +41,14 @@ Deletion of a member can be done from any particular and allows member to be in 
 - Addition of club includes no overloading of clubs
 - Convenors of Clubs can be only performed if the Member Exist in that particular club.
 - Events-Convenors-Club formation are protected functions
+  
+## IMPORTANT
 
+Our Code is totally working . Firstly, we guys have divided work and made separate functions and committed in Github but in last when we made main function then there holds a issue of header files. So now we guys have summarised the whole code in main function.(main.cpp)
 
 **Student Detail**
 
 - Name: Dhyey Patel, Student ID: 202301415
 - Name: Jay Patel, Student ID: 202301430
-- Name: Dushyant Patel, Student ID: 202301278
+- Name: Dushyant Varshney, Student ID: 202301278
 - Name: Pratik Chauhan, Student ID: 202301430
