@@ -1,25 +1,18 @@
-#include <iostream>
-#include "node.cpp"
-
-int memberfound(node**club[],int id,int num){
-    node**p;
-    p=club[num-1];
-    node*q;
-    q=p[id%10];
-    if(q==NULL){
-        return 0;
+int memberfound(vector<vector<node *>> &Club, int id, int num)
+{
+    node *p;
+    p = Club[num][id % 10];
+    while (p != nullptr)
+    {
+        if (p->stdid == id)
+        {
+            return 1; // Return 1 if member is found
+        }
+        p = p->next;
     }
-    else{
-    while(q!=NULL){
-        if(q->stdid==id){return 1;}
-        q=q->next;
-    }
-   
-   
-        return 0;
-    }
-   
+    return 0; // Return 0 if member is not found
 }
+   
 void insertmember(vector<vector<node *>> &Club, string N, int id, int num, list<pair<int, string>> &ls)
 {
     if (num >= 0 && num <= ls.size())
