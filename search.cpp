@@ -113,70 +113,31 @@ void printclubcategory(const vector<vector<node *>> &Club, list<pair<int, string
     }
 }
 
-void searchbyid(node **club[], int id)
+void searchbyid(vector<vector<node *>> &Club, list<pair<int, string>> &ls)
 {
+    int id;
+    cout << "Enter the id you want to search " << endl;
+    cin >> id;
     short int c = 0;
-    node **p;
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < ls.size(); i++)
     {
-        p = club[i];
         node *q;
-        q = p[id % 10];
-        short int d = 0;
-        while (q->next != NULL)
+        q = Club[i][id % 10];
+        while (q != NULL)
         {
             if (q->stdid == id)
             {
-                if (c == 0)
-                {
-                    c = 1;
-                    d = 1;
-                    cout << "Id - " << q->stdid << endl;
-                    cout << "Name - " << q->name << endl;
-
-                    break;
-                }
-                else
-                    d = 1;
+                c = 1;
+                string s = ClubName(ls, i);
+                cout << s << "_Club" << endl;
+                cout << "Id - " << q->stdid << endl;
+                cout << "Name - " << q->name << endl;
+                
+                cout<<"\n\n";
+                break;
             }
             else
                 q = q->next;
-        }
-        if (d == 1)
-        {
-            switch (i)
-            {
-            case 0:
-                cout << "Press Club" << endl;
-                break;
-            case 1:
-                cout << "Debate Club" << endl;
-                break;
-            case 2:
-                cout << "Film Club" << endl;
-                break;
-            case 3:
-                cout << "Dance Club" << endl;
-                break;
-            case 4:
-                cout << "Music Club" << endl;
-                break;
-            case 5:
-                cout << "Garba Club" << endl;
-                break;
-            case 6:
-                cout << "Drama Club" << endl;
-                break;
-            case 7:
-                cout << "Research Club" << endl;
-                break;
-            case 8:
-                cout << "Programming Club" << endl;
-                break;
-            case 9:
-                cout << "Chess Club" << endl;
-                break;
-            }
         }
     }
     if (c == 0)
