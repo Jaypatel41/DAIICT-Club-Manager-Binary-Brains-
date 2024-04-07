@@ -50,26 +50,66 @@ void searchbyclub(node **club[], int num)
     }
 }
 
-void searchbyclubcategory(node **club[], int num)
+void printclubi(const vector<vector<node *>> &Club, list<pair<int, string>> &ls, int i)
 {
-    switch (num)
+    bool clubHasMembers = false;
+    int p = ls.size();
+    string n = ClubName(ls, i);
+    if (i <= p-1)
+    {
+        cout << n << "_Club"
+             << " Members:" << endl;
+        for (int j = 0; j < Club[i].size(); ++j)
+        {
+            node *p = Club[i][j];
+            while (p != nullptr)
+            {
+                cout << "Name: " << p->name << ", ID: " << p->stdid << endl;
+                p = p->next;
+                clubHasMembers = true;
+            }
+        }
+        cout << endl;
+        if (!clubHasMembers)
+        {
+            cout << "No members in this club." << endl;
+        }
+    }
+}
+
+void printclubcategory(const vector<vector<node *>> &Club, list<pair<int, string>> &ls)
+{
+    int a;
+    cout << "Enter 1 for co-curricular clubs" << endl;
+    cout << "Enter 2 for cultural clubs" << endl;
+    cout << "Enter 3 for science and technology clubs" << endl;
+    cout << "Enter 4 for sports clubs" << endl;
+    cout << "Enter 5 for newly added clubs" << endl;
+    cin >> a;
+    int p = ls.size();
+    switch (a)
     {
     case 1:
-        searchbyclub(club, 0);
-        searchbyclub(club, 1);
-        searchbyclub(club, 2);
+        printclubi(Club, ls, 0);
+        printclubi(Club, ls, 1);
+        printclubi(Club, ls, 2);
         break;
     case 2:
-        searchbyclub(club, 3);
-        searchbyclub(club, 4);
-        searchbyclub(club, 5);
-        searchbyclub(club, 6);
+        printclubi(Club, ls, 3);
+        printclubi(Club, ls, 4);
+        printclubi(Club, ls, 5);
+        printclubi(Club, ls, 6);
         break;
     case 3:
-        searchbyclub(club, 7);
-        searchbyclub(club, 8);
+        printclubi(Club, ls, 7);
+        printclubi(Club, ls, 8);
+        break;
     case 4:
-        searchbyclub(club, 9);
+        printclubi(Club, ls, 9);
+        break;
+    case 5:
+        for(int i= 10; i <= p; ++i)
+        printclubi(Club, ls, i);
     }
 }
 
