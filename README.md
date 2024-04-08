@@ -46,9 +46,16 @@ Deletion of a member can be done from any particular and allows member to be in 
 
 Our Code is totally working . Firstly, we guys have divided work and made separate functions and committed in Github but in last when we made main function then there holds a issue of header files. So now we guys have summarised the whole code in main function.(main.cpp)
 
+
+Output PDF link is given below which contains all error and edge case explaination.
+
+[DOCUMENT FILE](https://docs.google.com/document/d/18OPZXEhLvjTLeWrgIQLb0bM5644VFAxHb7ieCvH2bWY/edit)
+
+[OUTPUT PDF](https://drive.google.com/file/d/1Q8Vb8oSqEhFjU0tBaLRqitrRJ2p6lCQ6/view?usp=sharing) 
+
 **Student Detail**
 
-- Name: Dhyey Patel, Student ID: 202301415
-- Name: Jay Patel, Student ID: 202301430
-- Name: Dushyant Varshney, Student ID: 202301278
-- Name: Pratik Chauhan, Student ID: 202301430
+- Dhyey Patel : 202301415
+- Jay Patel : 202301430
+- Dushyant Varshney : 202301278
+- Pratik Chauhan : 202301430
